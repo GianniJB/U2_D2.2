@@ -31,12 +31,15 @@ header {
   box-shadow: 0 3px 3px #444;
   margin-bottom: 1.5em;
   padding: 2em 1.5em;
+  position: sticky; /* add */
+  z-index: 99; /* add */
+  top: 0; /* add per
+   funzionare sticky */
 }
 
 @media screen and (min-width: 800px) {
   header {
     padding: 1em;
-    position: fixed; /* + */
   }
 }
 
@@ -97,22 +100,20 @@ main {
   margin-bottom: 1.5em;
 }
 
+/* +SOTTOLINEA */
 h1 > span {
   position: relative;
+  z-index: 0;
 }
 
-/* +underline */
 #underline {
   position: absolute;
-  /*left: 0;non funziona */
+  left: 0;
   right: 0;
-  bottom: 0;
+  bottom: -10px;
+  width: 100%;
   opacity: 60%;
-}
-
-/* +float */
-.imgLeft {
-  float: left;
+  z-index: -1;
 }
 
 @media screen and (min-width: 700px) {
@@ -136,8 +137,14 @@ section h2 {
   font-weight: bold;
   background-color: #a3a3a3;
   padding: 0px 1em;
-  position: absolute;
-  top: -20px;
+  position: absolute; /* add */
+  top: -20px; /* add */
+}
+
+@media screen and (min-width: 1200px) {
+  section {
+    height: 267px;
+  }
 }
 
 /* ELEMENTI NEL MAIN - ARTICLE */
@@ -213,7 +220,9 @@ h1 + p {
   border: 4px solid #00a0c6;
   outline: 4px solid #a02571;
   padding: 3px;
+  float: left; /* add */
 }
+
 ul,
 ol {
   margin-left: 2em;
@@ -337,6 +346,7 @@ aside div {
   border: 1px solid #c3c3c3;
   margin-bottom: 1em;
   padding: 1em;
+  position: relative; /* add */
 }
 
 @media screen and (min-width: 1200px) {
@@ -350,6 +360,15 @@ aside div p:last-child {
   margin-bottom: 0;
   font-size: 0.8em;
   text-align: right;
+}
+
+/* add icone aside */
+aside .fa-tag {
+  position: absolute;
+  opacity: 10%;
+  right: 10px;
+  top: 5px;
+  font-size: 70px;
 }
 
 /* FOOTER */
@@ -385,6 +404,24 @@ footer a {
     margin-left: auto;
     margin-right: auto;
   }
+}
+
+/* fixed buttons */
+
+.toTopBtn {
+  border: 2px solid white;
+  border-radius: 15px;
+  padding: 0px 15px;
+  background-color: #ffffff9c;
+  position: fixed;
+  right: -10px;
+  bottom: 20px;
+  z-index: 90;
+  font-size: 2em;
+}
+
+.toTopBtn i {
+  color: violet;
 }
 
 @media print {
