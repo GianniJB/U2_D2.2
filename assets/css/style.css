@@ -19,7 +19,11 @@ hr {
 /* HEADER */
 header {
   background: rgb(0, 160, 198);
-  background: linear-gradient(180deg, rgba(0, 160, 198, 1) 0%, rgba(3, 109, 134, 1) 68%);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 160, 198, 1) 0%,
+    rgba(3, 109, 134, 1) 68%
+  );
   text-align: center;
   text-transform: uppercase;
   font-weight: bold;
@@ -32,6 +36,7 @@ header {
 @media screen and (min-width: 800px) {
   header {
     padding: 1em;
+    position: fixed; /* + */
   }
 }
 
@@ -91,6 +96,25 @@ main {
   padding: 2em 1em;
   margin-bottom: 1.5em;
 }
+
+h1 > span {
+  position: relative;
+}
+
+/* +underline */
+#underline {
+  position: absolute;
+  /*left: 0;non funziona */
+  right: 0;
+  bottom: 0;
+  opacity: 60%;
+}
+
+/* +float */
+.imgLeft {
+  float: left;
+}
+
 @media screen and (min-width: 700px) {
   main {
     padding: 2em;
@@ -112,6 +136,8 @@ section h2 {
   font-weight: bold;
   background-color: #a3a3a3;
   padding: 0px 1em;
+  position: absolute;
+  top: -20px;
 }
 
 /* ELEMENTI NEL MAIN - ARTICLE */
@@ -329,7 +355,11 @@ aside div p:last-child {
 /* FOOTER */
 footer {
   background: rgb(53, 53, 53);
-  background: linear-gradient(0deg, rgba(53, 53, 53, 1) 0%, rgba(5, 85, 103, 1) 68%);
+  background: linear-gradient(
+    0deg,
+    rgba(53, 53, 53, 1) 0%,
+    rgba(5, 85, 103, 1) 68%
+  );
   box-shadow: 0 3px 3px #444;
   color: #f0f0f0;
   padding: 1em;
