@@ -32,7 +32,7 @@ header {
   margin-bottom: 1.5em;
   padding: 2em 1.5em;
   position: sticky; /* add */
-  z-index: 99; /* add */
+  z-index: 80; /* add */
   top: 0; /* add per
    funzionare sticky */
 }
@@ -407,21 +407,46 @@ footer a {
 }
 
 /* fixed buttons */
+.topRightBtns {
+  top: 585px;
+  position: fixed;
+  right: -10px;
+  z-index: 99;
+}
 
-.toTopBtn {
+@media screen and (min-width: 700px) {
+  .topRightBtns {
+    top: 50px;
+  }
+}
+
+.topRightBtns .far {
   border: 2px solid white;
   border-radius: 15px;
-  padding: 0px 15px;
+  padding: 15px;
+  background-color: #ffffff9c;
+  right: -10px;
+  z-index: 90;
+  font-size: 2em;
+  color: blue;
+  display: block;
+  margin-top: 10px;
+  width: 70px;
+}
+
+.toTopBtn .fas {
+  border: 2px solid white;
+  border-radius: 15px;
+  padding: 15px;
   background-color: #ffffff9c;
   position: fixed;
   right: -10px;
   bottom: 20px;
   z-index: 90;
   font-size: 2em;
-}
-
-.toTopBtn i {
   color: violet;
+  width: 70px;
+}
 }
 
 @media print {
